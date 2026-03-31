@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description" content="The Eye Of Cyber - Elite Cyber Security Company founded by Humayun Ali Khan. Specializing in Red Teaming, Pentesting, SIEM, Cloud Security, and Data Protection. Reserve your consultation via WhatsApp.">
+  <meta name="description" content="The Eye Of Cyber - Elite Cyber Security Company founded by Humayun Ali Khan. Specializing in Red Teaming, Pentesting, SIEM, Cloud Security, and Data Protection. Academy offering offensive & defensive security programs.">
   <meta name="author" content="The Eye Of Cyber">
-  <title>The Eye Of Cyber | Elite Cyber Security Company</title>
+  <title>The Eye Of Cyber | Elite Cyber Security Company & Academy</title>
   <!-- Google Fonts & Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,6 +26,8 @@
       --gray-text: #a0a8c0;
       --border-subtle: rgba(255, 255, 255, 0.06);
       --whatsapp: #25D366;
+      --offensive: #ff4d4d;
+      --defensive: #4d79ff;
     }
 
     body {
@@ -36,7 +38,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Custom Scroll */
     ::-webkit-scrollbar {
       width: 6px;
     }
@@ -54,7 +55,6 @@
       padding: 0 40px;
     }
 
-    /* Typography */
     h1, h2, h3, h4, .logo-text {
       font-family: 'Space Grotesk', monospace;
       font-weight: 700;
@@ -95,7 +95,6 @@
       font-size: 1.1rem;
     }
 
-    /* Buttons */
     .btn-primary {
       background: var(--primary);
       color: #03050b;
@@ -278,9 +277,129 @@
       line-height: 1.5;
     }
 
+    /* Academy Programs Section */
+    .academy-section {
+      padding: 100px 0;
+      background: var(--dark-bg);
+    }
+    .program-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: 2px solid rgba(0, 242, 192, 0.3);
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: #fff;
+      font-family: inherit;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #03050b;
+      border-color: var(--primary);
+    }
+    .tab-btn.offensive:hover, .tab-btn.offensive.active {
+      background: var(--offensive);
+      border-color: var(--offensive);
+      color: white;
+    }
+    .tab-btn.defensive:hover, .tab-btn.defensive.active {
+      background: var(--defensive);
+      border-color: var(--defensive);
+      color: white;
+    }
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    .program-card {
+      background: var(--dark-card);
+      border-radius: 28px;
+      padding: 32px;
+      transition: all 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+    }
+    .program-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+    }
+    .program-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-offensive {
+      background: var(--offensive);
+      color: white;
+    }
+    .badge-defensive {
+      background: var(--defensive);
+      color: white;
+    }
+    .program-card h3 {
+      font-size: 1.5rem;
+      margin: 20px 0 12px;
+    }
+    .program-duration {
+      color: var(--primary);
+      font-size: 0.85rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .program-description {
+      color: var(--gray-text);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .program-modules {
+      list-style: none;
+      margin: 20px 0;
+    }
+    .program-modules li {
+      padding: 6px 0;
+      color: #b9c3d4;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .program-modules li i {
+      color: var(--primary);
+      font-size: 0.7rem;
+    }
+    .program-footer {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .program-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
     /* Founder Spotlight */
     .founder-section {
       padding: 80px 0;
+      background: var(--dark-surface);
     }
     .founder-card {
       background: linear-gradient(135deg, #0c1120 0%, #080c18 100%);
@@ -332,13 +451,6 @@
       padding: 60px 40px;
       text-align: center;
       border: 1px solid rgba(0,242,192,0.25);
-    }
-    .cta-block h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .cta-block h2:after {
-      display: none;
     }
     .whatsapp-mega {
       background: var(--whatsapp);
@@ -395,7 +507,6 @@
     }
     .social-links a {
       font-size: 1.4rem;
-      color: var(--gray-text);
     }
     .copyright {
       text-align: center;
@@ -424,7 +535,7 @@
       .founder-card {
         padding: 30px;
       }
-      .services-grid {
+      .programs-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -442,7 +553,7 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#academy">Academy</a></li>
+        <li><a href="#academy-page">Academy</a></li>
         <li><a href="#company">Company</a></li>
         <li><a href="#contact" class="nav-wa"><i class="fab fa-whatsapp"></i> Reserve Seat</a></li>
       </ul>
@@ -459,12 +570,12 @@
       <p>The Eye Of Cyber — founded by Humayun Ali Khan, delivers enterprise-grade red teaming, penetration testing, SIEM engineering, and data protection services. Trusted by industry leaders.</p>
       <div class="hero-buttons">
         <a href="https://wa.me/923162890580?text=Hello%20Eye%20Of%20Cyber%2C%20I%20need%20a%20professional%20consultation." target="_blank" class="btn-primary"><i class="fab fa-whatsapp"></i> Book Consultation</a>
-        <a href="#services" class="btn-outline"><i class="fas fa-arrow-down"></i> Explore Services</a>
+        <a href="#academy-page" class="btn-outline"><i class="fas fa-graduation-cap"></i> View Academy Programs</a>
       </div>
     </div>
   </section>
 
-  <!-- Services Section - Complete Portfolio -->
+  <!-- Services Section -->
   <section id="services" class="services-section">
     <div class="container">
       <div class="section-header">
@@ -488,8 +599,137 @@
     </div>
   </section>
 
-  <!-- Academy & Founder (Humayun Ali Khan) -->
-  <section id="academy" class="founder-section">
+  <!-- Academy Page Section - Offensive & Defensive Programs -->
+  <section id="academy-page" class="academy-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>🎓 The Eye Of Cyber Academy</h2>
+        <div class="section-subtitle">World-class training programs led by Humayun Ali Khan and elite practitioners. Choose your path — Offensive or Defensive.</div>
+      </div>
+      
+      <div class="program-tabs">
+        <button class="tab-btn offensive active" data-tab="offensive"><i class="fas fa-skull"></i> Offensive Security</button>
+        <button class="tab-btn defensive" data-tab="defensive"><i class="fas fa-shield-alt"></i> Defensive Security</button>
+      </div>
+
+      <!-- Offensive Programs -->
+      <div id="offensive-programs" class="programs-grid active-tab">
+        <div class="program-card">
+          <div class="program-badge badge-offensive">Offensive</div>
+          <i class="fas fa-user-secret" style="font-size: 2rem; color: var(--offensive);"></i>
+          <h3>Red Team Operator</h3>
+          <div class="program-duration"><i class="far fa-clock"></i> 12 Weeks | Advanced</div>
+          <p class="program-description">Master adversary simulation, C2 frameworks, evasion techniques, and full-scope red team engagements.</p>
+          <ul class="program-modules">
+            <li><i class="fas fa-chevron-right"></i> Cobalt Strike & Sliver C2</li>
+            <li><i class="fas fa-chevron-right"></i> Advanced Evasion & Bypass</li>
+            <li><i class="fas fa-chevron-right"></i> Active Directory Attacks</li>
+            <li><i class="fas fa-chevron-right"></i> Lateral Movement & Persistence</li>
+          </ul>
+          <div class="program-footer">
+            <span class="program-price">Live Mentorship</span>
+            <a href="https://wa.me/923162890580?text=I'm%20interested%20in%20Red%20Team%20Operator%20program" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block; padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Enroll Now</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-badge badge-offensive">Offensive</div>
+          <i class="fas fa-code" style="font-size: 2rem; color: var(--offensive);"></i>
+          <h3>Advanced Web & API Hacking</h3>
+          <div class="program-duration"><i class="far fa-clock"></i> 8 Weeks | Intermediate</div>
+          <p class="program-description">Deep-dive into modern web vulnerabilities, API security, GraphQL attacks, and advanced exploitation.</p>
+          <ul class="program-modules">
+            <li><i class="fas fa-chevron-right"></i> OWASP Top 10 & Beyond</li>
+            <li><i class="fas fa-chevron-right"></i> GraphQL & REST API Attacks</li>
+            <li><i class="fas fa-chevron-right"></i> JWT & Auth Bypass Techniques</li>
+            <li><i class="fas fa-chevron-right"></i> WAF Evasion & Automation</li>
+          </ul>
+          <div class="program-footer">
+            <span class="program-price">Hands-on Labs</span>
+            <a href="https://wa.me/923162890580?text=I'm%20interested%20in%20Advanced%20Web%20%26%20API%20Hacking" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block; padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Enroll Now</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-badge badge-offensive">Offensive</div>
+          <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: var(--offensive);"></i>
+          <h3>Cloud Penetration Testing</h3>
+          <div class="program-duration"><i class="far fa-clock"></i> 6 Weeks | Advanced</div>
+          <p class="program-description">Attack AWS, Azure, GCP environments. IAM exploitation, container escapes, and serverless hacking.</p>
+          <ul class="program-modules">
+            <li><i class="fas fa-chevron-right"></i> AWS/Azure Privilege Escalation</li>
+            <li><i class="fas fa-chevron-right"></i> Kubernetes & Container Attacks</li>
+            <li><i class="fas fa-chevron-right"></i> Serverless Security Testing</li>
+            <li><i class="fas fa-chevron-right"></i> Cloud Misconfigurations</li>
+          </ul>
+          <div class="program-footer">
+            <span class="program-price">Cloud Labs Included</span>
+            <a href="https://wa.me/923162890580?text=I'm%20interested%20in%20Cloud%20Penetration%20Testing" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block; padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Enroll Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Defensive Programs -->
+      <div id="defensive-programs" class="programs-grid" style="display: none;">
+        <div class="program-card">
+          <div class="program-badge badge-defensive">Defensive</div>
+          <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--defensive);"></i>
+          <h3>SIEM Engineering & SOC Analyst</h3>
+          <div class="program-duration"><i class="far fa-clock"></i> 10 Weeks | Intermediate</div>
+          <p class="program-description">Master SIEM platforms (Splunk, Sentinel), correlation rules, threat hunting, and incident response workflows.</p>
+          <ul class="program-modules">
+            <li><i class="fas fa-chevron-right"></i> Splunk & KQL Mastery</li>
+            <li><i class="fas fa-chevron-right"></i> Custom Detection Rules</li>
+            <li><i class="fas fa-chevron-right"></i> Threat Intelligence Integration</li>
+            <li><i class="fas fa-chevron-right"></i> SOAR Automation</li>
+          </ul>
+          <div class="program-footer">
+            <span class="program-price">Live SOC Environment</span>
+            <a href="https://wa.me/923162890580?text=I'm%20interested%20in%20SIEM%20Engineering%20program" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block; padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Enroll Now</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-badge badge-defensive">Defensive</div>
+          <i class="fas fa-shield-virus" style="font-size: 2rem; color: var(--defensive);"></i>
+          <h3>Threat Hunting & DFIR</h3>
+          <div class="program-duration"><i class="far fa-clock"></i> 8 Weeks | Advanced</div>
+          <p class="program-description">Proactive threat hunting, digital forensics, memory analysis, and incident response strategies.</p>
+          <ul class="program-modules">
+            <li><i class="fas fa-chevron-right"></i> EDR Telemetry Analysis</li>
+            <li><i class="fas fa-chevron-right"></i> Memory Forensics (Volatility)</li>
+            <li><i class="fas fa-chevron-right"></i> Attack Reconstruction</li>
+            <li><i class="fas fa-chevron-right"></i> Malware Analysis Basics</li>
+          </ul>
+          <div class="program-footer">
+            <span class="program-price">IR Simulations</span>
+            <a href="https://wa.me/923162890580?text=I'm%20interested%20in%20Threat%20Hunting%20%26%20DFIR" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block; padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Enroll Now</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-badge badge-defensive">Defensive</div>
+          <i class="fas fa-network-wired" style="font-size: 2rem; color: var(--defensive);"></i>
+          <h3>Blue Team Operations</h3>
+          <div class="program-duration"><i class="far fa-clock"></i> 8 Weeks | Intermediate</div>
+          <p class="program-description">Build defensive capabilities: security monitoring, hardening, incident handling, and purple team exercises.</p>
+          <ul class="program-modules">
+            <li><i class="fas fa-chevron-right"></i> Security Monitoring & Alerting</li>
+            <li><i class="fas fa-chevron-right"></i> System Hardening (CIS Benchmarks)</li>
+            <li><i class="fas fa-chevron-right"></i> Purple Team Collaboration</li>
+            <li><i class="fas fa-chevron-right"></i> Security Automation</li>
+          </ul>
+          <div class="program-footer">
+            <span class="program-price">Certification Prep</span>
+            <a href="https://wa.me/923162890580?text=I'm%20interested%20in%20Blue%20Team%20Operations" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block; padding: 8px 24px;"><i class="fab fa-whatsapp"></i> Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Spotlight -->
+  <section class="founder-section">
     <div class="container">
       <div class="founder-card">
         <div class="founder-info">
@@ -505,8 +745,8 @@
           <div><i class="fas fa-trophy" style="font-size: 2rem; color: var(--primary);"></i></div>
           <div class="stat-number">150+</div>
           <div>Completed Engagements</div>
-          <div class="stat-number" style="margin-top: 24px;">100%</div>
-          <div>Client Retention</div>
+          <div class="stat-number" style="margin-top: 24px;">500+</div>
+          <div>Students Trained</div>
           <div class="stat-number" style="margin-top: 24px;">24/7</div>
           <div>Incident Support</div>
         </div>
@@ -514,7 +754,7 @@
     </div>
   </section>
 
-  <!-- Company Overview & Specializations -->
+  <!-- Company Overview -->
   <section id="company">
     <div class="container">
       <div class="section-header">
@@ -529,7 +769,7 @@
     </div>
   </section>
 
-  <!-- CTA Block: WhatsApp Booking + Reserve Seat -->
+  <!-- CTA Block: WhatsApp Booking -->
   <div class="container">
     <div class="cta-block" id="contact">
       <i class="fab fa-whatsapp" style="font-size: 3.2rem; color: var(--whatsapp);"></i>
@@ -563,11 +803,8 @@
         <p>Red Teaming</p><p>API / Mobile / Network Pentesting</p><p>Cloud & AD Security</p><p>Source Code Review</p><p>SIEM & Data Security</p>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
-        <p><a href="#home">Home</a></p>
-        <p><a href="#services">Services</a></p>
-        <p><a href="#academy">Academy & Founder</a></p>
-        <p><a href="#contact">Contact</a></p>
+        <h4>Academy</h4>
+        <p>Offensive Programs</p><p>Defensive Programs</p><p>Certification Tracks</p><p>Live Mentorship</p>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
@@ -583,34 +820,48 @@
 </footer>
 
 <script>
-  // Ensure all reserve seat links & WhatsApp buttons route to correct number + message
-  const whatsappNumber = "923162890580";
-  const defaultMsg = "Hello Eye Of Cyber, I'd like to reserve a seat and discuss security services.";
+  // Tab switching functionality
+  const offensiveBtn = document.querySelector('.tab-btn.offensive');
+  const defensiveBtn = document.querySelector('.tab-btn.defensive');
+  const offensivePrograms = document.getElementById('offensive-programs');
+  const defensivePrograms = document.getElementById('defensive-programs');
 
-  const allWaLinks = document.querySelectorAll('.nav-wa, .btn-primary[href*="wa.me"], .whatsapp-mega, .btn-primary:not([href]), .btn-primary');
-  document.querySelectorAll('.nav-wa, .whatsapp-mega, .btn-primary').forEach(btn => {
-    if (btn.getAttribute('href') && (btn.getAttribute('href').includes('wa.me') || btn.getAttribute('href').startsWith('https://wa.me'))) {
-      // already correct, keep as is
+  function switchToOffensive() {
+    offensiveBtn.classList.add('active');
+    defensiveBtn.classList.remove('active');
+    offensivePrograms.style.display = 'grid';
+    defensivePrograms.style.display = 'none';
+  }
+
+  function switchToDefensive() {
+    defensiveBtn.classList.add('active');
+    offensiveBtn.classList.remove('active');
+    defensivePrograms.style.display = 'grid';
+    offensivePrograms.style.display = 'none';
+  }
+
+  offensiveBtn.addEventListener('click', switchToOffensive);
+  defensiveBtn.addEventListener('click', switchToDefensive);
+
+  // WhatsApp redirection handler for all reserve/enroll buttons
+  const whatsappNumber = "923162890580";
+  
+  document.querySelectorAll('.nav-wa, .btn-primary, .whatsapp-mega').forEach(btn => {
+    if (btn.getAttribute('href') && btn.getAttribute('href').includes('wa.me')) {
       return;
     }
-    // if it's a button that doesn't have proper href, override
-    if (btn.classList.contains('btn-primary') || btn.classList.contains('nav-wa') || btn.classList.contains('whatsapp-mega')) {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMsg)}`, '_blank');
-      });
-    }
-  });
-  // additional override for "Book Consultation" / reserve seat any missing
-  const extraReserve = document.querySelectorAll('.hero-buttons .btn-primary, .founder-info .btn-primary');
-  extraReserve.forEach(btn => {
-    if (btn.getAttribute('href') && btn.getAttribute('href').includes('wa.me')) return;
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi, I need a professional consultation / seat reservation.")}`, '_blank');
+      let message = "Hello Eye Of Cyber, I'd like to reserve a seat and learn more about your services.";
+      if (btn.closest('.program-card')) {
+        const programName = btn.closest('.program-card')?.querySelector('h3')?.innerText;
+        if (programName) message = `I'm interested in the ${programName} program. Please share details.`;
+      }
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
     });
   });
-  // smooth scroll for anchor links
+
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
